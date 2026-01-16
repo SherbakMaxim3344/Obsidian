@@ -1,10 +1,11 @@
 import uvicorn
 from fastapi import FastAPI
-from src.web import user, creature
+from src.web import user, creature, auth
 
 app = FastAPI()
 app.include_router(user.router)
 app.include_router(creature.router)
+app.include_router(auth.router)
 
 @app.get("/")
 def top():

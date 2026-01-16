@@ -2,7 +2,7 @@ from src.model.user import UserPublic, UserCreate, UserInDB
 import src.data.user as data
 from errors import Missing, Duplicate
 from datetime import datetime, timezone
-
+from .auth import get_password_hash
 
 def get_all() -> list[UserPublic]:
     """UserPublic(**user.model_dump()) создает новый объект UserPublic, копируя только те поля, которые есть в UserPublic. Пароль не копируется."""
@@ -19,7 +19,7 @@ def create(user: UserCreate) -> UserPublic:
     existing = data.get_one(user.username)
     if existing:
         raise Duplicate(f"User {user.username} exists")
-    password_hash = f"hashed_{user.password}"
+    password_hash = get_password_hash(user.password)
     
     user_in_db = UserInDB(
         **user.model_dump(),
@@ -45,7 +45,7 @@ def replace(username: str, user: UserCreate) -> UserPublic:
         if existing:
             raise Duplicate(f"User {user.username} exists")
     
-    password_hash = f"hashed_{user.password}"
+    password_hash = get_password_hash(user.password)
     
     user_in_db = UserInDB(
         **user.model_dump(),
