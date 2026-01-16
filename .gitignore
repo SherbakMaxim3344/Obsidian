@@ -1,260 +1,215 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# PyInstaller
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
-.hypothesis/
-.pytest_cache/
-cover/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
+# ========================================
+# ROOT LEVEL IGNORES
+# ========================================
+.DS_Store
+Thumbs.db
+desktop.ini
 *.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
 
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-.pybuilder/
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# pyenv
-.python-version
-
-# pipenv
-Pipfile.lock
-
-# poetry
-poetry.lock
-
-# pdm
-.pdm.toml
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# pytype static type analyzer
-.pytype/
-
-# Cython debug symbols
-cython_debug/
-
-# VS Code
+# IDE & Editors
 .vscode/
-*.code-workspace
-
-# PyCharm
-.idea/
-*.iml
-
-# Virtual environments
-venv/
-env/
-.venv/
-
-# Environment variables
-.env
-.env.local
-
-# SQLite
-*.db
-*.sqlite
-*.sqlite3
-
-# Для твоего проекта - БД (если не хочешь коммитить)
-# db/
-# cryptid.db
-
-# Мои файлы
-my.txt
-
-
-
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# Dependencies
-/node_modules
-/.pnp
-.pnp.js
-/.pnpm-store
-
-# Production
-/build
-/dist
-
-# Testing
-/coverage
-
-# Environment variables
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-.env.*.local
-
-# IDE and Editor
-.vscode/*
-!.vscode/extensions.json
 .idea/
 *.swp
 *.swo
 *~
-.DS_Store
-
-# Logs
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
-# TypeScript cache
-*.tsbuildinfo
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Optional stylelint cache
-.stylelintcache
-
-# Microbundle cache
-.rpt2_cache/
-.rts2_cache_cjs/
-.rts2_cache_es/
-.rts2_cache_umd/
-
-# Optional REPL history
-.node_repl_history
-
-# Output of 'npm pack'
-*.tgz
-
-# Yarn Integrity file
-.yarn-integrity
-
-# parcel-bundler cache (https://parceljs.org/)
-.cache
-.parcel-cache
-
-# Next.js build output
-.next
-
-# Nuxt.js build / generate output
-.nuxt
-
-# Gatsby files
-.cache/
-# Comment in the public line in if your project uses Gatsby and not Next.js
-# https://nextjs.org/blog/next-9-1#public-directory-support
-# public
-
-# Storybook build outputs
-.out
-.storybook-out
-
-# Temporary folders
-tmp/
-temp/
+*.code-workspace
 
 # OS generated files
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# Linux
-.directory
-*~
-
-# Windows
-Thumbs.db
-
-# MacOS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# Package manager specific
+# ========================================
+# FRONTEND (React/TypeScript/Node.js)
+# ========================================
+
+# Dependencies
+frontend/node_modules/
+frontend/.pnpm-store/
+frontend/.npm/
+frontend/.yarn/
+
+# Build outputs
+frontend/build/
+frontend/dist/
+frontend/.next/
+frontend/out/
+
+# Cache
+frontend/.parcel-cache/
+frontend/.cache/
+frontend/.eslintcache
+frontend/.stylelintcache
+frontend/.rpt2_cache/
+frontend/.rts2_cache_*/
+
+# Coverage
+frontend/coverage/
+frontend/.nyc_output/
+
+# Logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/pnpm-debug.log*
+
+# Environment variables
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/.env.*.local
+
+# TypeScript
+frontend/*.tsbuildinfo
+
+# Public folder (generated)
+frontend/public/          # ← React creates this during build
+
+# ========================================
+# BACKEND (Python/FastAPI)
+# ========================================
+
+# Byte-compiled / optimized / DLL files
+backend/__pycache__/
+backend/*.py[cod]
+backend/*$py.class
+
+# C extensions
+backend/*.so
+
+# Distribution / packaging
+backend/.Python
+backend/build/
+backend/develop-eggs/
+backend/dist/
+backend/downloads/
+backend/eggs/
+backend/.eggs/
+backend/lib/
+backend/lib64/
+backend/parts/
+backend/sdist/
+backend/var/
+backend/wheels/
+backend/pip-wheel-metadata/
+backend/share/python-wheels/
+backend/*.egg-info/
+backend/.installed.cfg
+backend/*.egg
+backend/MANIFEST
+
+# PyInstaller
+backend/*.manifest
+backend/*.spec
+
+# Installer logs
+backend/pip-log.txt
+backend/pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+backend/htmlcov/
+backend/.tox/
+backend/.nox/
+backend/.coverage
+backend/.coverage.*
+backend/.cache
+backend/nosetests.xml
+backend/coverage.xml
+backend/*.cover
+backend/*.py,cover
+backend/.hypothesis/
+backend/.pytest_cache/
+backend/cover/
+
+# Jupyter Notebook
+backend/.ipynb_checkpoints
+
+# IPython
+backend/profile_default/
+backend/ipython_config.py
+
+# pyenv
+backend/.python-version
+
+# pipenv
+backend/Pipfile.lock
+
+# poetry
+backend/poetry.lock
+
+# pdm
+backend/.pdm.toml
+
+# mypy
+backend/.mypy_cache/
+backend/.dmypy.json
+backend/dmypy.json
+
+# Pyre type checker
+backend/.pyre/
+
+# pytype static type analyzer
+backend/.pytype/
+
+# Cython debug symbols
+backend/cython_debug/
+
+# Virtual environments
+backend/.venv/
+backend/venv/
+backend/env/
+
+# Environment variables
+backend/.env
+backend/.env.local
+
+# Database
+backend/*.db
+backend/*.sqlite
+backend/*.sqlite3
+backend/db.sqlite3
+backend/db.sqlite3-journal
+
+# Flask
+backend/instance/
+backend/.webassets-cache
+
+# Django
+backend/local_settings.py
+
+# ========================================
+# PACKAGE MANAGER FILES
+# ========================================
 package-lock.json
 yarn.lock
 pnpm-lock.yaml
 bun.lockb
 
-# ВАЖНО: Эти файлы НЕ игнорируются (остаются в репозитории):
-# !package.json
-# !tsconfig.json
-# !*.css
-# !*.tsx
-# !*.jsx
-# !*.ts
-# !*.js (только если нужны конфиги)
+# ========================================
+# PROJECT-SPECIFIC
+# ========================================
+# Дополнительные игноры для вашего проекта
+
+# Логи приложения
+*.log
+logs/
+
+# Временные файлы
+tmp/
+temp/
+
+# Конфигурационные файлы (кроме основных)
+config/local.*
+config/development.*
+config/test.*
