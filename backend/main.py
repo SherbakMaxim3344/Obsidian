@@ -1,7 +1,7 @@
 from multiprocessing import allow_connection_pickling
 import uvicorn
 from fastapi import FastAPI
-from src.web import user, creature, auth
+from src.web import user, auth
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
@@ -15,7 +15,6 @@ app.add_middleware(
 )
 
 app.include_router(user.router)
-app.include_router(creature.router)
 app.include_router(auth.router)
 
 @app.get("/")

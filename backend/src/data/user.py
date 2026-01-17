@@ -1,7 +1,9 @@
-from .init import conn, curs
 from src.model.user import UserInDB, UserPublic
 from datetime import datetime
+from .init import get_cursor, get_connection
 
+conn = get_connection()
+curs = get_cursor()
 
 curs.execute("""create table if not exists users(
     id integer primary key autoincrement,
@@ -74,8 +76,10 @@ def replace(old_username: str, user: UserInDB) -> UserInDB:
     curs.execute(qry, params)
     conn.commit()
     
-    # Возвращаем обновленного пользователя
-    return get_one(user.username)  # по новому имени
+    updated_user = get_one(user.username)
+    if not updated_user:
+        raise ValueError(f"User {user.username} not found after update")
+    return updated_user
 
 def delete(username: str) -> bool:
     qry = "delete from users where username = :username"

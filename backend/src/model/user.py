@@ -27,13 +27,13 @@ class UserCreate(UserBase):
         return v
 
 class UserInDB(UserBase):
-    id: int
+    id: Optional[int] = None
     password_hash: str
-    avatar_url: Optional[str]=None
-    bio: Optional[str]=None
-    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
-    updated_at: Optional[datetime]=None
-    last_login: Optional[datetime]=None
+    avatar_url: Optional[str] = None
+    bio: Optional[str] = None
+    created_at: Optional[datetime] = Field(default_factory=lambda: datetime.now(timezone.utc))
+    updated_at: Optional[datetime] = None
+    last_login: Optional[datetime] = None
     is_active: bool = True
     is_verified: bool = False
     

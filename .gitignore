@@ -213,3 +213,18 @@ temp/
 config/local.*
 config/development.*
 config/test.*
+
+
+
+*.pyc
+*.txt
+*.db
+!backend/my.txt  # ← если хотите исключить my.txt из игнорирования
+
+# Frontend public folder - более строгие правила
+frontend/public/**
+!frontend/public/.gitignore
+!frontend/public/index.html
+
+# Вложенные git репозитории (если есть)
+**/.git/
